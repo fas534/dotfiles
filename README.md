@@ -12,7 +12,7 @@ Source has been patched to support a number of layouts.
 	> Float
 	> Monocole
 	> Grid
-	> 3 column 
+	> 3 column
 	> Fibonacci (Sprial + Dwindle)
 	> Bottomstack
 
@@ -28,10 +28,9 @@ slstatus is a suckless status monitor for window managers that use WM_NAME
 
 Volume info fix
 ---------------
-slstatus often does not show volumn info due to missing "amixer" file in /dev/directory.
-Create a new file name named "modules.conf" in /etc/modules-load.d/ directory.
-Add this line in the file-
-	
+slstatus often does not show volumn info due to missing amixer file.
+Create a new file name named "modules.conf" in /etc/modules-load.d/ & add this line in the file-
+
 	snd-pcm-oss
 
 Then reboot.
