@@ -1,0 +1,30 @@
+# Editor
+export EDITOR='nvim'
+
+# Prompt
+colorballs
+
+# List dir
+alias ls="lsd"
+alias la="lsd -A"
+alias ll="lsd -l"
+alias tree="lsd --tree"
+
+# Change dir
+alias wm="cd ~/.config/arco-dwm/"
+alias dl="cd ~/Downloads"
+alias pg="cd ~/Program"
+alias mu="cd ~/Music"
+alias vd="cd ~/Videos"
+alias pc="cd ~/Pictures"
+alias hdd="cd /run/media/saikat/"
+
+# Shortcut
+alias mkd="mkdir -p "
+
+# Applications
+alias or="ranger"
+alias sx="sxiv -b ./"
+alias wnet="slurm -i wlp2s0"
+alias ptop="sudo powertop"
+alias clock="tty-clock -tcsf '%A, %B %d'"

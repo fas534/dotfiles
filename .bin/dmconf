@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+# Script name: dmconf
+# Description: Choose from a list of configuration files to edit.
+# Dependencies: dmenu
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# Contributors: Derek Taylor
+
+# Defining the text editor to use.
+# DMENUEDITOR="st -e vim"
+# DMENUEDITOR="st -e nvim"
+DMEDITOR="subl3"
+
+# An array of options to choose.
+# You can edit this list to add/remove config files.
+declare -a options=(
+"dwm - $HOME/.config/arco-dwm/config.h"
+"dwm scheme - $HOME/.config/arco-dwm/scheme.c"
+"kitty - $HOME/.config/kitty/kitty.conf"
+"kitty colors - $HOME/.config/kitty/colors.conf"
+"neovim - $HOME/.config/nvim/init.vim"
+"picom - $HOME/.config/picom/picom.conf"
+"ranger - $HOME/.config/ranger/rc.conf"
+"quickmarks - $HOME/.config/qutebrowser/quickmarks"
+"qutebrowser - $HOME/.config/qutebrowser/autoconfig.yml"
+"slstatus - $HOME/.config/slstatus/config.h"
+"sxhkd - $HOME/.config/sxhkd/sxhkdrc"
+"xresources - $HOME/.Xresources"
+"zsh - $HOME/.zshrc"
+"quit"
+)
+
+# Piping the above array into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+choice=$(printf '%s\n' "${options[@]}" | dmenu -fn 'NotoSansMono Nerd Font:size=11' -nb '#282828' -nf '#a4c098' -sb '#a4c098' -sf '#282828' -i -l 20 -p 'Edit config:')
+
+# What to do when/if we choose 'quit'.
+if [[ "$choice" == "quit" ]]; then
+    echo "Program terminated." && exit 1
+
+# What to do when/if we choose a file to edit.
+elif [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	$DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 1
+fi
