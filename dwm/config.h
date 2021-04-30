@@ -13,7 +13,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "NotoSansMono Nerd Font:size=10"  };
 static const char dmenufont[]       = "NotoSansMono Nerd Font:size=10";
 
-#include "Schemes/white.c"
+#include "Schemes/koi.c"
 
 static const unsigned int baralpha = 255;
 static const unsigned int borderalpha = 100;
@@ -34,23 +34,23 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 *  use tags mask to point an application to a specific workspace
 	 */
-	/* class								instance			title			tags mask		   isfloating		monitor */
-	{ "Gimp",								NULL,				NULL,				0,					0,			  -1 	},
-	{ "Xfce4-terminal",						NULL,				NULL,				0,					1,			  -1 	},
-	{ "firefox",							NULL,				NULL,			  1 << 2,				0,			  -1 	},
-	{ "qutebrowser",						NULL,				NULL,			  1 << 2,				0,			  -1 	},
-	{ "Caprine",						  "caprine",	    "Messenger",		  1 << 3,				1,			  -1 	},
-	{ "discord",						  	NULL,	    		NULL,		  	  1 << 3,				0,			  -1 	},
-	{ "Spotify",						  "spotify",	   "Spotify Free",		  1 << 3,				0,			  -1 	},
-	{ "whatsapp-nativefier-d40211",			NULL,	     		NULL,		  	  1 << 3,				0,			  -1 	},
-	{ "Arcolinux-welcome-app.py",			NULL,				NULL,			    0,					1,			  -1 	},
-	{ "zoom",								NULL,			 "Settings",		  1 << 3,				1,			  -1 	},
-	{ "zoom",							   "zoom",			 	NULL,		  	  1 << 3,				1,			  -1 	},
-	{ "firefox",						  "Toolkit",	"Picture-in-Picture", 	  1 << 2,				1,			  -1 	},
-	{ "mpv",								"gl",				NULL,				1,					0,			  -1	},
-	{ "Subl3",							   "subl3", 			NULL,			  1 << 4,				0,			  -1	},
-	{ "Code",							   "code", 				NULL,			  1 << 4,				0,			  -1	},
-	{ "Thunar",							  	NULL, 				NULL,			  1 << 5,				0,			  -1	},
+	/* class													instance							 title									tags mask	  isfloating	monitor */
+	{ "Gimp",														NULL,									NULL,											0,					0,			  -1 	},
+	{ "Xfce4-terminal",									NULL,									NULL,											0,					1,			  -1 	},
+	{ "firefox",												NULL,									NULL,			  						1 << 2,				0,			  -1 	},
+	{ "qutebrowser",										NULL,									NULL,			  						1 << 2,				0,			  -1 	},
+	{ "Caprine",											"caprine",	    		 "Messenger",		  					1 << 3,				1,			  -1 	},
+	{ "discord",				  							NULL,	    						NULL,		  	  					1 << 3,				0,			  -1 	},
+	{ "Spotify",					  					"spotify",	   	   "Spotify Free",		  				1 << 3,				0,			  -1 	},
+	{ "whatsapp-nativefier-d40211",			NULL,	     						NULL,		  	  					1 << 3,				0,			  -1 	},
+	{ "Arcolinux-welcome-app.py",				NULL,									NULL,			    						0,					1,			  -1 	},
+	{ "zoom",														NULL,			 				 "Settings",		  					1 << 3,				1,			  -1 	},
+	{ "zoom",							   					 "zoom",			 	        NULL,		  	  					1 << 3,				1,			  -1 	},
+	{ "firefox",						  			  "Toolkit",			 "Picture-in-Picture", 					1 << 2,				1,			  -1 	},
+	{ "mpv",														"gl",									NULL,											1,					0,			  -1	},
+	{ "Subl3",							   				 "subl3", 							NULL,			  						1 << 4,				0,			  -1	},
+	{ "Code",							   					 "code", 								NULL,			  						1 << 4,				0,			  -1	},
+	{ "Thunar",							  					NULL, 								NULL,			  						1 << 5,				0,			  -1	},
 };
 
 /* layout(s) */
