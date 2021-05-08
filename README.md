@@ -8,13 +8,13 @@ Layouts
 -------
 Source has been patched to support a number of layouts.
 
-	> Tile
-	> Float
-	> Monocole
-	> Grid
-	> 3 column
-	> Fibonacci (Sprial + Dwindle)
-	> Bottomstack
+	- Tile
+	- Float
+	- Monocole
+	- Grid
+	- 3 column
+	- Fibonacci (Sprial + Dwindle)
+	- Bottomstack
 
 Icons
 -----
