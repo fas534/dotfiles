@@ -1,10 +1,10 @@
 # dotfiles
 
-dwm - dynamic window manager
+## dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
-Layouts
+### Layouts
 -------
 Source has been patched to support a number of layouts.
 
@@ -16,17 +16,17 @@ Source has been patched to support a number of layouts.
 	- Fibonacci (Sprial + Dwindle)
 	- Bottomstack
 
-Icons
+### Icons
 -----
 Nerd Font is used for statusbar icons for better avaiability of icons.
 
 
-slstatus - suckless status
+### slstatus - suckless status
 ==========================
 slstatus is a suckless status monitor for window managers that use WM_NAME
 (e.g. dwm) or stdin to fill the status bar.
 
-Volume info fix
+### Volume info fix
 ---------------
 slstatus often does not show volumn info due to missing amixer file.
 Create a new file name named "modules.conf" in /etc/modules-load.d/ & add this line in the file-
@@ -35,7 +35,7 @@ Create a new file name named "modules.conf" in /etc/modules-load.d/ & add this l
 
 Then reboot.
 
-# nvim
+## nvim
 To use nvim for C programming, Install-
 - clang
 - nvim-coc
