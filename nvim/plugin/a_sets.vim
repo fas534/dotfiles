@@ -1,5 +1,8 @@
 " Behavior
 	syntax on
+	set tabstop=4
+	set shiftwidth=4
+	set expandtab
 	set mouse=a
 	set encoding=utf-8
 	filetype plugin on

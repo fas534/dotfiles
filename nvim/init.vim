@@ -29,7 +29,6 @@ Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'mbbill/undotree'
 
@@ -41,8 +40,12 @@ Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'vimwiki/vimwiki'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pechorin/any-jump.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color'
+Plug 'raimondi/delimitmate'
 call plug#end()
 
 
