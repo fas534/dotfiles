@@ -34,3 +34,9 @@ Create a new file name named "modules.conf" in /etc/modules-load.d/ & add this l
 	snd-pcm-oss
 
 Then reboot.
+
+# nvim
+To use nvim for C programming, Install-
+- clang
+- nvim-coc
+- nvim-coc-clangd-git
