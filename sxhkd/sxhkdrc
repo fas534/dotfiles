@@ -27,6 +27,11 @@ super + Return
 alt + t
 	urxvt
 
+# Rofi
+super + r
+	rofi -show run
+
+
 # Xkill
 super + Escape
     xkill
