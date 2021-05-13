@@ -1,7 +1,8 @@
 # dotfiles
 
 ## dwm - dynamic window manager
-### ===================================
+ =========================================
+
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
@@ -20,13 +21,13 @@ Source has been patched to support a number of layouts.
 
 ### Icons
 
-[**Nerd Fonts**](https://aur.archlinux.org/nerd-fonts-noto-sans-mono.git) is used for statusbar icons for it's better looks & rich library of icons.
+[**Nerd Fonts**](https://www.nerdfonts.com/) is used for statusbar icons for it's better looks & rich library of icons.
 
-[**Cascadia Code**](https://aur.archlinux.org/cascadia-code-git.git) is used for termial. It supports a wide variety of ligatures.
+[**Cascadia Code**](https://github.com/microsoft/cascadia-code) is used for termial. It supports a wide variety of ligatures.
 
 ---
 ## slstatus - suckless status
-### ==========================
+==============================
 
 slstatus is a suckless status monitor for window managers that use WM_NAME
 (e.g. dwm) or stdin to fill the status bar.
