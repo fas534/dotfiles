@@ -1,10 +1,30 @@
 # dotfiles
 
-## dwm - dynamic window manager
+## Details
+
+**Distro:** [Arcolinux](https://arcolinux.com)
+
+**WM:** [dwm](https://dwm.suckless.org/)
+
+**Shell:** [zsh](https://github.com/zsh-users/zsh)
+
+**Terminal:** [kitty](https://sw.kovidgoyal.net/kitty/)
+
+**Colorscheme:** A slightly modified version of [gruvbox](https://github.com/morhetz/gruvbox).
+
+> My build is heavily inspired by [b4skyx's](https://github.com/b4skyx) build. Saying inspired is probably wrong & unethical, I'm using his colorscheme [serenade](https://github.com/b4skyx/serenade) in my editors. 
+
+---
+
+## dwm - Dynamic Window Manager
  =========================================
 
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+### Patches
+[Arcolinux dwm](https://www.arcolinuxd.com/category/dwm/) comes with a handful of patches. I patched my dwm build to the point where you can consider it as a bloated build of dwm. **My soul embraced the bloat <3**.
+
+This build supports colored emojis.
 
 ### Layouts
 
@@ -19,14 +39,19 @@ Source has been patched to support a number of layouts.
 7. Fibonacci (Dwindle)
 8. Bottomstack
 
-### Icons
+### Fonts & Icons
 
-[**Nerd Fonts**](https://www.nerdfonts.com/) is used for statusbar icons for it's better looks & rich library of icons.
+Unlike others, I believe in [**Nerd Fonts**](https://www.nerdfonts.com/)'s supremacy for statusbar icons.
 
-[**Cascadia Code**](https://github.com/microsoft/cascadia-code) is used for termial. It supports a wide variety of ligatures.
+[**Cascadia Code**](https://github.com/microsoft/cascadia-code) is used in terminal.
+
+### Status Monitor
+
+I'm using [slstatus](https://github.com/drkhsh/slstatus) as my status monitor.
 
 ---
-## slstatus - suckless status
+
+## slstatus - Suckless Status
 ==============================
 
 slstatus is a suckless status monitor for window managers that use WM_NAME
@@ -34,7 +59,7 @@ slstatus is a suckless status monitor for window managers that use WM_NAME
 
 ### "Volume info showing n/a" fix
 
-slstatus often does not show volumn info due to missing amixer file.
+slstatus often does not show volumn info due to missing `amixer` file.
 
 To fix this
 ```bash
@@ -43,17 +68,29 @@ sudo mv modules.conf /etc/modules-load.d/
 ```
 Then reboot.
 
-## nvim
-To use nvim for C programming, Install-
+
+
+## Miscellaneous
+==================
+
+Applications can be automatically started on startup by adding them into .xinitrc instead of using dwm's autostart patch. Be sure to configure the `autostart.sh` according to your source directory.
+
+---
+
+## Neovim
+==========
+
+Using [b4skyx](https://github.com/b4skyx)'s [configuration](https://github.com/b4skyx/dotfiles/tree/master/.config/nvim). Configured it to use for C programming-
 - clang
 - nodejs
 - nvim-coc
 - nvim-coc-clangd-git
 
-## misc
-Autostart applications can be started at startup by adding them into .xinitrc.
+---
 
-## wallpapers
-- koi 
+
+
+## Wallpapers
+- ### koi 
 ![koi](wallpapers/koi.jpg)
 
