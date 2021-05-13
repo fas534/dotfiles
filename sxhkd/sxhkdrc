@@ -37,7 +37,7 @@ super + Escape
     xkill
 
 
-	
+
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
@@ -189,7 +189,7 @@ ctrl + Print
      xfce4-screenshooter
 
 shift + Print
-	xfce4-screenshooter -csr ~/Pictures/Snap
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)' -q 100 -s -f
 
 
 #################################################################
