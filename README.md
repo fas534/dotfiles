@@ -38,5 +38,9 @@ Then reboot.
 ## nvim
 To use nvim for C programming, Install-
 - clang
+- nodejs
 - nvim-coc
 - nvim-coc-clangd-git
+In init.vim, add
+> Plug 'neoclide/coc.nvim', {'branch':'release'}
+
