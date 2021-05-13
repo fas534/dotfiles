@@ -1,38 +1,45 @@
 # dotfiles
 
 ## dwm - dynamic window manager
-============================
+### ===================================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+
 ### Layouts
--------
+
 Source has been patched to support a number of layouts.
 
-	- Tile
-	- Float
-	- Monocole
-	- Grid
-	- 3 column
-	- Fibonacci (Sprial + Dwindle)
-	- Bottomstack
+1. Tile
+2. Float
+3. Monocole
+4. Gapless Grid
+5. 3 column
+6. Fibonacci (Sprial)
+7. Fibonacci (Dwindle)
+8. Bottomstack
 
 ### Icons
------
-Nerd Font is used for statusbar icons for better avaiability of icons.
 
+[**Nerd Fonts**](https://aur.archlinux.org/nerd-fonts-noto-sans-mono.git) is used for statusbar icons for it's better looks & rich library of icons.
 
-### slstatus - suckless status
-==========================
+[**Cascadia Code**](https://aur.archlinux.org/cascadia-code-git.git) is used for termial. It supports a wide variety of ligatures.
+
+---
+## slstatus - suckless status
+### ==========================
+
 slstatus is a suckless status monitor for window managers that use WM_NAME
 (e.g. dwm) or stdin to fill the status bar.
 
-### Volume info fix
----------------
+### "Volume info showing n/a" fix
+
 slstatus often does not show volumn info due to missing amixer file.
-Create a new file name named "modules.conf" in /etc/modules-load.d/ & add this line in the file-
 
-	snd-pcm-oss
-
+To fix this
+```bash
+echo "snd-pcm-oss" > modules.conf
+sudo mv modules.conf /etc/modules-load.d/
+```
 Then reboot.
 
 ## nvim
@@ -41,6 +48,11 @@ To use nvim for C programming, Install-
 - nodejs
 - nvim-coc
 - nvim-coc-clangd-git
-In init.vim, add
-> Plug 'neoclide/coc.nvim', {'branch':'release'}
+
+## misc
+Autostart applications can be started at startup by adding them into .xinitrc.
+
+## wallpapers
+- koi 
+![koi](wallpapers/koi.jpg)
 
