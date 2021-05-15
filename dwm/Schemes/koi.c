@@ -1,7 +1,7 @@
 static const char norm_fg[] = "#c2c2c2"; //bfddb2
 //static const char norm_bg[] = "#0F161E";
 static const char norm_bg[] = "#282828";
-static const char norm_border[] = "#0F161E";
+static const char norm_border[] = "#ff5500";
 
 static const char sel_fg[] = "#282828";
 static const char sel_bg[] = "#c2c2c2";
