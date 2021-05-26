@@ -68,17 +68,20 @@ sudo mv modules.conf /etc/modules-load.d/
 ```
 Then reboot.
 
+### Compositor
+===============
 
+In case of using ibhagwan's [fork](https://github.com/ibhagwan/picom) of [picom](https://github.com/yshui/picom) as desktop compositor, delete the original "picom.conf" & rename "picom.conf.ibhagwan" to "picom.conf".
 
 ## Miscellaneous
-==================
+=====================
 
 Applications can be automatically started on startup by adding them into .xinitrc instead of using dwm's autostart patch. Be sure to configure the `autostart.sh` according to your source directory.
 
 ---
 
 ## Neovim
-==========
+============
 
 Using [b4skyx](https://github.com/b4skyx)'s [configuration](https://github.com/b4skyx/dotfiles/tree/master/.config/nvim). Configured it to use for C programming-
 - clang
