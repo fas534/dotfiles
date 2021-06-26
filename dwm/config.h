@@ -1,8 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 20;       /* snap pixel */
+
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 5;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;     /* 0 means no systray */
 
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -128,7 +134,7 @@ static Key keys[] = {
 
 	{ MODKEY,              			XK_o,      		incrogaps,      {.i = +1 } },
 	{ MODKEY|ShiftMask,    			XK_o,      		incrogaps,      {.i = -1 } },
-	
+
 	{ MODKEY,          		    	XK_6,      		incrihgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,		    	XK_6,      		incrihgaps,     {.i = -1 } },
 
@@ -140,18 +146,18 @@ static Key keys[] = {
 
 	{ MODKEY,              			XK_9,      		incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,    			XK_9,      		incrovgaps,     {.i = -1 } },
-	
+
 	/* ============================== M O V E S T A C K ================================= */
 	{ MODKEY|ShiftMask,             XK_j,      		movestack,      {.i = +1 } },
  	{ MODKEY|ShiftMask,             XK_k,      		movestack,      {.i = -1 } },
-		
+
 	{ MODKEY,                       XK_Tab,    		view,           {0} },
-	
+
 	/* =============================== L A Y O U T S ==================================== */
 	{ MODKEY|Mod1Mask,				XK_t,      		setlayout,      {.v = &layouts[0]} }, 	/* Tile */
 	{ MODKEY|Mod1Mask,				XK_f,      		setlayout,      {.v = &layouts[1]} }, 	/* Floating */
 
-	{ MODKEY|Mod1Mask,				XK_s,      		setlayout,      {.v = &layouts[2]} }, 	/* Spiral */	
+	{ MODKEY|Mod1Mask,				XK_s,      		setlayout,      {.v = &layouts[2]} }, 	/* Spiral */
 	{ MODKEY|Mod1Mask|ShiftMask,	XK_s,      		setlayout,      {.v = &layouts[3]} }, 	/* Dwindle */
 
 	{ MODKEY|Mod1Mask,				XK_d,      		setlayout,      {.v = &layouts[4]} }, 	/* Deck */
@@ -173,7 +179,7 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_space,  setlayout,      {0} }, */
 
 
-	
+
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_a,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_a,      tag,            {.ui = ~0 } },
@@ -186,7 +192,7 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_comma,  		shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_period, 		shiftview,      {.i = +1 } },
-    
+
     { MODKEY|ControlMask,           XK_space,  focusmaster,    {0} },
 
 	TAGKEYS(                        XK_1,                      0)
