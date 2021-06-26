@@ -1,0 +1,40 @@
+# Export
+export EDITOR='nvim'
+export TERMINAL="kitty"
+export READER="zathura"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Prompt
+colorballs
+
+# List dir
+alias ls="lsd"
+alias la="lsd -A"
+alias ll="lsd -l"
+alias lx="lsd -lXF"
+alias tree="lsd --tree"
+
+# Change dir
+alias wm="cd ~/.config/dwm/"
+alias dl="cd ~/Downloads"
+alias pg="cd ~/Program"
+alias mu="cd ~/Music"
+alias vd="cd ~/Videos"
+alias pc="cd ~/Pictures"
+alias hdd="cd /run/media/saikat/"
+
+# Shortcut
+alias mkd="mkdir -p "
+alias parufind="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
+
+# Applications
+alias or="ranger"
+alias sx="sxiv -b ./"
+alias wnet="slurm -i wlp2s0"
+alias ptop="sudo powertop"
+alias clock="tty-clock -tcsf '%A, %B %d'"
+
+# start dwm
+if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep -x dwm || exec startx
+fi
