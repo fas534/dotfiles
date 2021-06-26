@@ -1,3 +1,4 @@
+
 #################################################################
 # KEYBOARD BINDINGS FOR ANY TWM
 #################################################################
@@ -6,30 +7,53 @@
 # SUPER + FUNCTION KEYS
 #################################################################
 
+# Htop
+super + F2
+    kitty -e htop
+
+# Slurm
+super + F3
+    kitty -e slurm -i wlp2s0
+
+# Connect wifi
+super + F5
+    sh -e /home/saikat/.local/bin/Wifi
+
+# Power menu
+super + F9
+    sh -e ~/.local/bin/Power
+
+# Xproperties
+super + F11
+    sh -e /home/saikat/.local/bin/Xprop
+
+# Input method
+super + F12
+    sh -e /home/saikat/.local/bin/Keyboard
 
 #################################################################
 # SUPER + ... KEYS
 #################################################################
 
-# arcolinux-logout
-super + x
-    arcolinux-logout
+# Kitty
+super + Return
+	kitty
+
+# Rofi
+super + r
+    rofi -show drun
 
 # Pavucontrol
 super + v
     pavucontrol
 
-# Kitty
-super + Return
-	kitty
+# System
+super + w; {b, f, p, s, t}
+    {firefox, thunar, pamac-manager, xfce4-settings-manager, arcoliux-tweak-tool}
 
 # URxvt
 alt + t
 	urxvt
-
-# Rofi
-super + r
-	rofi -show run
 
 
 # Xkill
@@ -42,9 +66,9 @@ super + Escape
 # SUPER + SHIFT KEYS
 #################################################################
 
-# System-settings
+# Browser
 super + shift + Return
-	xfce4-settings-manager
+    firefox
 
 #reload sxhkd:
 super + shift + s
@@ -55,53 +79,6 @@ super + shift + s
 # CONTROL + ALT KEYS
 #################################################################
 
-# File-manager
-ctrl + alt + F
-     thunar
-
-ctrl + alt + f
-	kitty -e ranger
-
-#arcolinux-tweak-tool
-ctrl + alt + e
-    arcolinux-tweak-tool
-
-#conky-rotate
-ctrl + alt + Next
-     conky-rotate -n
-
-#conky-rotate
-ctrl + alt + Prior
-    conky-rotate -p
-
-
-#Htop
-ctrl + alt + h
-     kitty -e htop
-
-#qutebrowser
-ctrl + alt + B
-     qutebrowser
-
-#Firefox
-ctrl + alt + b
-	firefox
-
-#Nitrogen
-ctrl + alt + i
-     nitrogen
-
-#Pamac-manager
-ctrl + alt + p
-    pamac-manager
-
-# C* music player
-ctrl + alt + c
-	kitty -e cmus
-
-#Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
 
 
 #Keyboard dependent
@@ -182,14 +159,11 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)'
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.png' -e 'mv $f /home/saikat/Pictures/Screenshots/)' -q 100
 
-#screeenshooter
-ctrl + Print
-     xfce4-screenshooter
-
+# Scrot-cropped with clipboard
 shift + Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)' -q 100 -s -f
+    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.png' -e 'mv $f /home/saikat/Pictures/Screenshots/Cropped/' -q 100 -s -f -e 'xclip -selection clipboard -t image/png -i $f'
 
 
 #################################################################
@@ -197,8 +171,6 @@ shift + Print
 #################################################################
 
 #xfce4-terminal dropdown
-F12
-    xfce4-terminal --drop-down
 
 
 #################################################################
