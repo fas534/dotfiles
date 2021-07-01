@@ -1,0 +1,19 @@
+#!/bin/bash
+
+declare -a options=(
+"Lock"
+"Reboot"
+"Poweroff"
+)
+
+choice=$(printf '%s\n' "${options[@]}" | dmenu -fn 'NotoSansMono Nerd Font:size=11' -nb '#282828' -nf '#c2c2c2' -sb '#c2c2c2' -sf '#282828' -i -l 5 -p "Select: ")
+
+if [ "$choice" == "Lock" ]; then
+    slock -m "Locked at  $(date "+%a %d, %I:%H %p")" && exit 0
+elif [ "$choice" == "Reboot" ]; then
+    reboot && exit 0
+elif [ "$choice" == "Poweroff" ]; then
+    shutdown now && exit 0
+fi
+
+done

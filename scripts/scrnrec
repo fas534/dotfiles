@@ -1,0 +1,11 @@
+#!/bin/bash -x
+
+INRES="1920x1080"
+OUTRES="1920x1080"
+FPS="60"
+
+ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i :0.0 -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo \
+-vcodec libx264 -s "$OUTRES" \
+-acodec libmp3lame -ab 128k -ar 48000 \
+-threads 0 -f mp4 $1
+

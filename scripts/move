@@ -1,0 +1,8 @@
+#!/bin/bash
+
+files=$(ls | fzf -m)
+destination=$(find ~/ -type d | fzf)
+
+cp -r $files $destination
+
+exit 0
