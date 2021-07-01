@@ -1,0 +1,19 @@
+#!/bin/bash
+
+declare -a name="MD. Fahim Abrar Saikat"
+declare -a mail="saikat.cucse.52@gmail.com"
+declare -a ID="1935202534"
+declare -a github="https://github.com/FA-Saikat"
+day=$(date +"%D, %r")
+
+printf "Filename: " && read file
+
+info=$(
+echo "Project Name   - ${file}"
+echo "Created On     - ${day}"
+echo "Author Name    - ${name}"
+echo "Author E-mail  - ${mail}"
+echo "Author Github  - ${github}"
+)
+
+echo "${info}" > $file && nvim $file && exit 0
