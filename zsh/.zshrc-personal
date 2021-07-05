@@ -1,11 +1,5 @@
-# Export
-export EDITOR='nvim'
-export TERMINAL="kitty"
-export READER="zathura"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 # Prompt
-colorballs
+#colorballs
 
 # List dir
 alias ls="lsd"
@@ -14,27 +8,71 @@ alias ll="lsd -l"
 alias lx="lsd -lXF"
 alias tree="lsd --tree"
 
-# Change dir
-alias wm="cd ~/.config/dwm/"
-alias dl="cd ~/Downloads"
-alias pg="cd ~/Program"
-alias mu="cd ~/Music"
-alias vd="cd ~/Videos"
-alias pc="cd ~/Pictures"
-alias hdd="cd /run/media/saikat/"
+# Copying
+alias yy="rsync -vP"
 
 # Shortcut
 alias mkd="mkdir -p "
 alias parufind="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
+alias record="ffmpeg -f x11grab -s 1920x1080 -i :0.0 -f pulse -ac 2 -ar 48000 -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f pulse -ac 2 -ar 48000 -i alsa_input.pci-0000_00_1f.3.analog-stereo -filter_complex amix=inputs=2"
 
 # Applications
+alias yts="ytfzf -tfl --subs=5 --preview-side=right "
+alias yt="ytfzf -tf --preview-side=right"
 alias or="ranger"
 alias sx="sxiv -b ./"
+alias v="nvim"
+alias wal="wal -in"
 alias wnet="slurm -i wlp2s0"
 alias ptop="sudo powertop"
 alias clock="tty-clock -tcsf '%A, %B %d'"
 
 # start dwm
-if [ "$(tty)" = "/dev/tty1" ]; then
-    pgrep -x dwm || exec startx
-fi
+#if [ "$(tty)" = "/dev/tty1" ]; then
+    #pgrep -x dwm || exec startx
+#fi
+
+# start dwm
+# if [ "$(tty)" = "/dev/tty1" ]; then
+#     pgrep -x dwm || exec startx
+# fi
+
+# Cast
+alias cast="ffmpeg -f x11grab -s 1920x1080 -i :0.0 -f pulse -i  alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo"
+# theme
+# obraun
+
+## FUNCTION
+## Change dir
+fd(){
+    cd "$(find ~/ -type d | fzf)"
+}
+
+## Open file
+ff(){
+    xdg-open "$(find ~/ -type f | fzf)"
+}
+
+## Copy
+# File
+# yy(){
+#     files=$(ls | fzf -m)
+#     destination=$(find ~/ -type d | fzf)
+#     cp -r $files $destination
+# }
+
+# Dir
+
+yyd(){
+    files=$(find -maxdepth 1 -type d | fzf -m)
+    destination=$(find ~/ -type d | fzf)
+    cp -r $files $destination
+}
+
+## Delete
+deld(){
+    rm -rf $(find -type d | fzf -m)
+}
+del(){
+    rm -rf $(ls | fzf -m)
+}
