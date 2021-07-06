@@ -1,9 +1,0 @@
-#!/bin/bash
-
-declare -a options=(
-"xkb:us::eng"
-"ibus-avro"
-)
-input=$(printf '%s\n' "${options[@]}" | dmenu -fn 'NotoSansMono Nerd Font:size=11' -nb '#282828' -nf '#c2c2c2' -sb '#c2c2c2' -sf '#282828' -i -l 5 -p "Choose Keyboard:" )
-
-ibus engine $input
