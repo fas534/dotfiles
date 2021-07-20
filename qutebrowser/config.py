@@ -130,3 +130,6 @@ config.bind('xx', 'config-cycle statusbar.show never always ;; config-cycle tabs
 # Youtube videos in mpv
 config.bind(',m', 'spawn mpv {url}')
 config.bind(',s', 'hint links spawn mpv {hint-url}')
+
+# Webrendaring
+config.set('qt.force_software_rendering', 'software-opengl')
