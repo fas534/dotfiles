@@ -45,7 +45,11 @@ Plug 'pechorin/any-jump.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color'
-Plug 'raimondi/delimitmate'
+" Plug 'raimondi/delimitmate'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'sbdchd/neoformat'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
