@@ -10,7 +10,6 @@
 let mapleader =","
 let maplocalleader = "\\"
 
-
 " Vim-Plug init
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
@@ -42,14 +41,16 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pechorin/any-jump.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color'
-" Plug 'raimondi/delimitmate'
-Plug 'lukas-reineke/indent-blankline.nvim'
+
+Plug 'Yggdroot/indentLine'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nekonako/xresources-nvim'
+
+
 call plug#end()
 
 
@@ -126,3 +127,19 @@ augroup END
 
 " Sudo on files that require root permission
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Indentline Settings
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#A4E57E'
+
+" none X terminal
+let g:indentLine_color_tty_light = 4 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#CC9CE5C0'
+
