@@ -21,15 +21,15 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "NotoSansMono Nerd Font:size=10" };
-static const char dmenufont[]       = { "NotoSansMono Nerd Font:size=10" };
+static const char *fonts[]          = { "NotoSansMono Nerd Font:size=11" };
+static const char dmenufont[]       = { "NotoSansMono Nerd Font:size=11" };
 
-#include "Schemes/koi.c"
+#include "Schemes/custom.c"
 
 
 /* tagging */
 /* static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "","", "", "", "﬏", "" };
+static const char *tags[] = { "","", "", "﬏", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,14 +43,14 @@ static const Rule rules[] = {
 	{  NULL,      		NULL,     			"Event Tester", 				0,         		0,          	0,          	 1,        	-1 	}, /* xev */
 	{ "firefox",		NULL,				NULL,			  				1 << 2,			0,			  	0,				 0,			-1 	},
 	{ "qutebrowser",	NULL,				NULL,			  				1 << 2,			0,			  	0,				 0,			-1 	},
-	{ "Caprine",	  	"caprine",	    	"Messenger",					1 << 3,			1,			  	0,				 0,			-1 	},
+	{ "Caprine",	  	"caprine",	    	"Messenger",					1 << 5,			0,			  	0,				 0,			-1 	},
 	{ "whatsapp-nativefier-d40211",	NULL,	NULL,							1 << 3,			0,				0,			  	 0,			-1 	},
 	{ "zoom",			NULL,			 	"Settings",		  				1 << 3,			1,				0,	 			 0,			-1 	},
 	{ "zoom",		   	"zoom",			 	NULL,		  	  				1 << 3,			1,				0,	 			 0,			-1 	},
 	{ "firefox",	  	"Toolkit",			"Picture-in-Picture", 	  		1 << 2,			1,				0,	 			 0,			-1 	},
 	{ "Subl3",		   	"subl3", 			NULL,			  				1 << 4,			0,				0,	 			 0,			-1	},
 	{ "Code",		   	"code", 			NULL,			  				1 << 4,			0,				0,	 			 0,			-1	},
-	{ "Pcmanfm",	 	NULL, 				NULL,			  				1 << 5,			0,				0,	 			 0,			-1	},
+	{ "xdman-Main",	 	NULL, 				NULL,			  				0,		    	1,				0,	 			 0,			-1	},
 
 
 };
@@ -99,7 +99,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_fg, "-nf", norm_bg, "-sb", sel_bg, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run" };
 static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
@@ -175,7 +175,8 @@ static Key keys[] = {
 
 	{ MODKEY|ControlMask,			XK_m,      		setlayout,      {.v = &layouts[13]} },	/* Monocole */
 
-	{ MODKEY,						XK_space,  		togglefloating, {0} },
+	{ MODKEY,						XK_space,  		togglefloating, {0}                 },
+    { MODKEY,                       XK_s,           togglesticky,   {0}                 },
 	/* { MODKEY,                       XK_space,  setlayout,      {0} }, */
 
 
@@ -184,8 +185,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_a,      tag,            {.ui = ~0 } },
 
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|Mod1Mask,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY|Mod1Mask,                       XK_period, focusmon,       {.i = +1 } },
 
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
