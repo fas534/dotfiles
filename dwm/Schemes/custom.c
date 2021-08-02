@@ -1,6 +1,6 @@
 static const char norm_fg[] = "#BCB7B3"; // Text
 //static const char norm_bg[] = "#0F161E";
-static const char norm_bg[] = "#282828";
+static const char norm_bg[] = "#2D2D2D";
 static const char norm_border[] = "#66460B"; // Slave Bordere
 
 static const char sel_fg[] = "#282828";
