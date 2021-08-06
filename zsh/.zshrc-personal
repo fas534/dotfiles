@@ -1,12 +1,20 @@
-# Prompt
+# ░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀
+# ░█▀▀░█▀▄░█░█░█░█░█▀▀░░█░
+# ░▀░░░▀░▀░▀▀▀░▀░▀░▀░░░░▀░
 #colorballs
 
-# List dir
+# ░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀
+# ░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█
+# ░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀
+
+# Directory listing
 alias ls="lsd"
-alias la="lsd -A"
-alias ll="lsd -l"
-alias lx="lsd -lXF"
+alias la="lsd -1hAF"
+alias ll="lsd -hlAF --group-dirs first --blocks permission --blocks date --date +'%a %b %d%I:%M %p' --blocks size --blocks name"
 alias tree="lsd --tree"
+
+# FUZ
+alias fn="sh -e ~/.local/bin/fuz"
 
 # Copying
 alias yy="rsync -vP"
@@ -14,44 +22,86 @@ alias yy="rsync -vP"
 # Shortcut
 alias mkd="mkdir -p "
 alias parufind="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
-alias record="ffmpeg -f x11grab -s 1920x1080 -i :0.0 -f pulse -ac 2 -ar 48000 -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f pulse -ac 2 -ar 48000 -i alsa_input.pci-0000_00_1f.3.analog-stereo -filter_complex amix=inputs=2"
 
 # Applications
-alias yts="ytfzf -tfl --subs=5 --preview-side=right "
+# ytfzf
+alias yts="ytfzf -tfl --subs=2 --preview-side=right "
 alias yt="ytfzf -tf --preview-side=right"
+
+# Htop
+alias htop="htop --tree"
+
+# ranger
 alias or="ranger"
+
+# sxiv
 alias sx="sxiv -b ./"
+
+#nitrogen
+alias setbg="nitrogen --set-scaled "
+#neovim
 alias v="nvim"
-alias wal="wal -in"
+
+# qutebrowser
+alias qute="qutebrowser --qt-flag ignore-gpu-blocklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4"
+
+# misc
 alias wnet="slurm -i wlp2s0"
-alias ptop="sudo powertop"
 alias clock="tty-clock -tcsf '%A, %B %d'"
 
-# start dwm
-#if [ "$(tty)" = "/dev/tty1" ]; then
-    #pgrep -x dwm || exec startx
-#fi
+
+# ░█▀▀░█▀▀░▀█▀░█▀█░█▀█░▀█▀
+# ░▀▀█░█▀▀░░█░░█░█░█▀▀░░█░
+# ░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░░░░▀░
+
+# setopt autocd               # change to named directory
+# setopt cdspell            # autocorrects cd misspellings
+# setopt -s cmdhist          # save multi-line commands in history as single line
+# setopt -s dotglob
+# setopt -s histappend       # do not overwrite history
+# setopt -s expand_aliases   # expand aliases
+
+
+# ░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█░█
+# ░▀▀█░░█░░█▀█░█▀▄░░█░░▄▀▄
+# ░▀▀▀░░▀░░▀░▀░▀░▀░░▀░░▀░▀
 
 # start dwm
 # if [ "$(tty)" = "/dev/tty1" ]; then
-#     pgrep -x dwm || exec startx
+#   pgrep -x dwm || exec startx
 # fi
 
-# Cast
-alias cast="ffmpeg -f x11grab -s 1920x1080 -i :0.0 -f pulse -i  alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo"
-# theme
-# obraun
 
-## FUNCTION
-## Change dir
+# ░█▀▀░█░█░█▀█░█▀▀░▀█▀░▀█▀░█▀█░█▀█░█▀▀
+# ░█▀▀░█░█░█░█░█░░░░█░░░█░░█░█░█░█░▀▀█
+# ░▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+
+# Change dir
 fd(){
     cd "$(find ~/ -type d | fzf)"
 }
 
-## Open file
+# Open file
 ff(){
     xdg-open "$(find ~/ -type f | fzf)"
 }
+
+# Copy directory
+# yyd(){
+#     files=$(find -maxdepth 1 -type d | fzf -m)
+#     destination=$(find ~/ -type d | fzf)
+#     cp -r $files $destination
+# }
+
+# # Delete miltiple directory
+# deld(){
+#     rm -rf $(find -type d | fzf -m)
+# }
+
+# # Delete multiple files
+# del(){
+#     rm -rf $(ls | fzf -m)
+# }
 
 ## Copy
 # File
@@ -63,16 +113,20 @@ ff(){
 
 # Dir
 
-yyd(){
-    files=$(find -maxdepth 1 -type d | fzf -m)
-    destination=$(find ~/ -type d | fzf)
-    cp -r $files $destination
-}
 
-## Delete
-deld(){
-    rm -rf $(find -type d | fzf -m)
-}
-del(){
-    rm -rf $(ls | fzf -m)
-}
+# ░▀█▀░█░█░█▀▀░█▄█░█▀▀░█▀▀
+# ░░█░░█▀█░█▀▀░█░█░█▀▀░▀▀█
+# ░░▀░░▀░▀░▀▀▀░▀░▀░▀▀▀░▀▀▀
+
+# candy-kingdom
+# amuse
+# ys
+# apple
+# adben
+# fletcherm
+# wedisagree
+# sonicradish
+# miloshadzic
+# refined
+# norm
+
