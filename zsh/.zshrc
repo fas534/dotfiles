@@ -12,7 +12,8 @@ export ZSH=/usr/share/oh-my-zsh/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerine" as zsh theme
-ZSH_THEME="garyblessington"
+ZSH_THEME="miloshadzic"
+# ZSH_THEME="garyblessington"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -234,8 +235,8 @@ alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 
 #shopt
-#shopt -s autocd # change to named directory
-#shopt -s cdspell # autocorrects cd misspellings
+# shopt -s autocd # change to named directory
+# shopt -s cdspell # autocorrects cd misspellings
 #shopt -s cmdhist # save multi-line commands in history as single line
 #shopt -s dotglob
 #shopt -s histappend # do not overwrite history
