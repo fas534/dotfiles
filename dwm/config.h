@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 20;       /* snap pixel */
 
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -40,6 +40,8 @@ static const Rule rules[] = {
 	{  "Gimp",    		NULL,     			NULL,           				0,         		1,          	0,          	 0,        	-1 	},
 	{  "Firefox", 		NULL,     			NULL,           				1 << 8,    		0,          	0,          	-1,        	-1 	},
 	{  "kitty",     	NULL,     			NULL,           				0,         		0,          	1,          	 0,        	-1 	},
+	{  "St",     	    NULL,     			NULL,           				0,         		0,          	1,          	 0,        	-1 	},
+	{  "st-256color",   NULL,     			NULL,           				0,         		0,          	1,          	 0,        	-1 	},
 	{  NULL,      		NULL,     			"Event Tester", 				0,         		0,          	0,          	 1,        	-1 	}, /* xev */
 	{ "firefox",		NULL,				NULL,			  				1 << 2,			0,			  	0,				 0,			-1 	},
 	{ "qutebrowser",	NULL,				NULL,			  				1 << 2,			0,			  	0,				 0,			-1 	},
@@ -100,7 +102,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run" };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        		function        argument */
