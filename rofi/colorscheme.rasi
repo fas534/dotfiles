@@ -3,11 +3,11 @@
     highlight: bold italic;
     scrollbar: true;
 
-    bg0-soft:     #2a2f33;
+    bg0-soft:     #2D2D2D;
     bg1:          #31363b;
     bg3:          #474f54;
     fg0:          #fbf1c7;
-    fg1:          #bfddb2;
+    fg1:          #EBDB90;
     red-dark:     #cc241d;
     red-light:    #fb4934;
     yellow-dark:  #d79921;

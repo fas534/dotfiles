@@ -1,8 +1,8 @@
 window {
     transparency:                   "real";
-	border:							3px;
+	border:							1px;
     border-radius:                  0px;
-	width:							45%;
+	width:							55%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -60,7 +60,7 @@ element {
 }
 
 element-icon {
-    size:                           24px;
+    size:                           30px;
     border:                         0px;
 }
 
